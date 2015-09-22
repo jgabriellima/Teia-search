@@ -66,7 +66,10 @@ exports.run = function() {
             r = o.restriction;
         }
         /**/
-        var excludes = o.exclude.split(",");
+        var excludes = [];
+        if (o.exclude !== undefined) {
+            exclude = o.exclude.split(",");
+        }
         /**/
         var ex = false;
         for (var i = 0; i < excludes.length; i++) {
