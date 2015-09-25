@@ -1,10 +1,10 @@
 var teia = require("./teia-search.js");
 teia.init({
-    base: "C:\\workspace_full_migration",
-    restriction: "branch",
-    exclude: "target",
-    filefilter: "filters/filter_migracao.txt",
-    fileResult: "results/result.txt",
+    base: "C:\\workspace_sefa_interno",
+    // restriction: "branch",
+    // exclude: "target",
+    filefilter: "filters/novo_filtro.txt",
+    fileResult: "results/resultados.txt",
     indexpath: 2
 });
 teia.debug(true);

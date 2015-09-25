@@ -68,7 +68,7 @@ exports.run = function() {
         /**/
         var excludes = [];
         if (o.exclude !== undefined) {
-            exclude = o.exclude.split(",");
+            excludes = o.exclude.split(",");
         }
         /**/
         var ex = false;
@@ -103,7 +103,8 @@ exports.run = function() {
                                 proj = path.dirname(filename);
                             }
                             /**/
-                            fs.writeSync(fd, '' + regexs[r].toString().replace("/", "").replace("(.*)/", "").replace("i", "") + ',' + proj + ',' + filename + ',' + (index + 1) + '\n');
+                            console.log(regexs[r].toString());
+                            fs.writeSync(fd, '' + regexs[r].toString().replace("/", "").replace("(.*)/i", "") + ',' + proj + ',' + filename + ',' + (index + 1) + '\n');
                             fs.closeSync(fd);
                         }
                     }
