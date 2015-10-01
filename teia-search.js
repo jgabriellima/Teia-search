@@ -59,7 +59,20 @@ exports.run = function() {
         };
     };
     /*filtra os arquivos do tipo java properties e xml*/
-    fromDir(o.base, /\.java$|\.properties$|\.xml$/, function(filename) {
+    var re;
+    try {
+        var _r = o.regex.split(",");
+        re = "";
+        for (var i = 0; i < _r.length; i++) {
+            re += "." + _r[i] + "$";
+            if (i !== (_r.length - 1)) {
+                re += "|"
+            }
+        }
+    } catch (e) {
+        re = ".java$|.properties$|.xml$"
+    }
+    fromDir(o.base, new RegExp(re), function(filename) {
         /*verifica se esta dentro da branch*/
         var r = o.base;
         if (o.restriction !== undefined) {
@@ -103,7 +116,6 @@ exports.run = function() {
                                 proj = path.dirname(filename);
                             }
                             /**/
-                            console.log(regexs[r].toString());
                             fs.writeSync(fd, '' + regexs[r].toString().replace("/", "").replace("(.*)/i", "") + ',' + proj + ',' + filename + ',' + (index + 1) + '\n');
                             fs.closeSync(fd);
                         }

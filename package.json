@@ -1,0 +1,27 @@
+{
+  "name": "teia-search",
+  "version": "1.0.3",
+  "description": "Engine para buscas complexas de alto desempenho",
+  "main": "teia-search.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgabriellima/Teia-search.git"
+  },
+  "keywords": [
+    "search",
+    "regex",
+    "stream",
+    "search",
+    "teia",
+    "titãs"
+  ],
+  "author": "João Gabriel Lima <jgabriel.ufpa@gmail.com> (http://jgabriellima.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgabriellima/Teia-search/issues"
+  },
+  "homepage": "https://github.com/jgabriellima/Teia-search#readme"
+}
